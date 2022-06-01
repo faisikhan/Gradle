@@ -35,4 +35,11 @@ jobs:
           distribution: 'adopt'
       - uses: gradle/gradle-build-action@v2
         with:
+          arguments: test
+      - uses: gradle/gradle-build-action@v2
+        with:
+          arguments: assemble
+          
+      - uses: gradle/gradle-build-action@v2
+        with:
           arguments: build
