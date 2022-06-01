@@ -43,17 +43,23 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         with:
           arguments: build
-
-      - name: Build the Docker image
-        run: |
-            docker build . --tag frehman/pipe1:gradle
-            
-      - name: Logging into the Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PASS }}
           
-      - name: Pushing the Image to Docker Hub
+      - name: Build image
         run: |
-            docker push frehman/pipe1:gradle
+         docker build . --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
+
+#       - name: Build the Docker image
+#         run: |
+#             docker build . --tag frehman/pipe1:gradle
+            
+#       - name: Logging into the Docker Hub
+#         uses: docker/login-action@v1
+#         with:
+#           username: ${{ secrets.DOCKER_USER }}
+#           password: ${{ secrets.DOCKER_PASS }}
+          
+#       - name: Pushing the Image to Docker Hub
+#         run: |
+#             docker push frehman/pipe1:gradle
+
+
