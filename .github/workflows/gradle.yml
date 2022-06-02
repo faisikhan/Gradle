@@ -28,9 +28,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build the hello-world Docker image
+      - name: Build the Gradle Docker image
         run: |
           docker build . --tag ghcr.io/faisikhan/gradle:$GITHUB_WORKFLOW-$GITHUB_RUN_NUMBER
-          docker run ghcr.io/faisikhan/gradle:$GITHUB_WORKFLOW-$GITHUB_RUN_NUMBER
-          docker push ghcr.io/faisikhan/gradle:$GITHUB_WORKFLOW-$GITHUB_RUN_NUMBER
 
+      - name: Push the Gradle Docker image
+        run: |
+          docker push ghcr.io/faisikhan/gradle:$GITHUB_WORKFLOW-$GITHUB_RUN_NUMBER
