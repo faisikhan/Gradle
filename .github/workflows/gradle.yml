@@ -24,6 +24,7 @@ jobs:
 
       - name: Build the Gradle Docker image
         run: |
+          curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com/user
           docker build . --tag ghcr.io/faisikhan/gradle:$GITHUB_WORKFLOW-$GITHUB_RUN_NUMBER
 
       - name: Push the Gradle Docker image
