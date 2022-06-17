@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './gradlew test'
+                sh 'gradle'
             }
         }
 //         stage('Test') {
