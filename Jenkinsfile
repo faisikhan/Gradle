@@ -11,10 +11,6 @@ pipeline {
                 sh './gradlew'
             }
         }
-//         stage('Test') {
-//             steps {
-//                 sh './gradlew test'
-//             }
-//         }
     }
-}
+    }
+ }
