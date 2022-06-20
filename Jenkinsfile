@@ -6,13 +6,9 @@ pipeline {
       steps {
         git([url: 'git@github.com:faisikhan/gradle.git', credentialsId: 'githubcreds', branch: 'master'])
 
-      }
-    }
-  }  
-    
-//     triggers {
-//         pollSCM '* * * * *'
-//     }
+         }
+       }
+     }  
     stages {
         stage('Build') {
             steps {
