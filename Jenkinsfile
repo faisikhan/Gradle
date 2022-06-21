@@ -29,7 +29,7 @@ pipeline {
         }
          stage('Tag Docker image') {
             steps {
-                sh 'docker tag imagename("$BUILD_NUMBER")'
+                sh 'docker tag imagename'
                 }
         }
       
