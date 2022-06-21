@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Build Docker image') {
             steps {
-                sh './gradlew build imagename'
+                sh './gradlew build'
                 }
         }
         stage('Push Docker image') {
