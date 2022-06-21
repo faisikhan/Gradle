@@ -29,7 +29,7 @@ pipeline {
         }
          stage('Tag Docker image') {
             steps {
-                sh 'docker tag imagename'
+                sh 'docker tag . imagename'
                 }
         }
       
