@@ -20,13 +20,14 @@ pipeline {
                 sh './gradlew docker'
             }
         }
-        stage('Push Docker image') {
-            environment {
-                DOCKER_HUB_LOGIN = credentials('hub')
-            }
-            steps {
-                sh './gradlew dockerPush'
-            }
+        stage('Push Image') {
+            steps{
+          script {
+             docker.withRegistry( '', registryCredential ) {
+               dockerImage.push("$BUILD_NUMBER")
+             }
         }
+      }
+    }
     }
 }
