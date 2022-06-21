@@ -29,7 +29,7 @@ pipeline {
         }
          stage('Tag Docker image') {
             steps {
-                sh './gradlew dockerTag'
+                sh 'docker tag imagename("$BUILD_NUMBER")'
                 }
         }
       
