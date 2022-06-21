@@ -1,8 +1,16 @@
 pipeline {
-    agent any
+  environment {
+    imagename = "frehman/pipe1"
+    registryCredential = 'hub'
+    dockerImage = ''
+  }
+  agent any
+  stages {
+    stage('Clone Git') {
+      steps {
+        git([url: 'git@github.com:faisikhan/gradle.git', credentialsId: 'githubcreds', branch: 'master'])
 
-    triggers {
-        pollSCM '* * * * *'
+      }
     }
     stages {
         stage('Build') {
@@ -20,7 +28,7 @@ pipeline {
                 sh './gradlew docker'
             }
         }
-        stage('Push Image') {
+          stage('Push Image') {
             steps{
           script {
              docker.withRegistry( '', registryCredential ) {
@@ -28,6 +36,11 @@ pipeline {
              }
         }
       }
+    
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $imagename:$BUILD_NUMBER"
+        } 
+      }
     }
-    }
-}
+  }
