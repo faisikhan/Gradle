@@ -27,18 +27,13 @@ pipeline {
                 sh './gradlew build'
                 }
         }
-         stage('Tag Docker image') {
-            steps {
-                sh 'docker tag . imagename'
-                }
-        }
-      
         stage('Push Docker image') {
             environment {
                 DOCKER_HUB_LOGIN = credentials('hub')
           }  
           
         steps {
+                sh 'docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW'
                 sh './gradlew dockerPush'
             }  
     }
