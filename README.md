@@ -3,7 +3,7 @@
 3. A build script is known as build.gradle and is located in the root directory of the project. 
 4. Gradlew is a gradle wrapper for gradle command.
 5. gradlew is a wrapper(w - character) that uses gradle.
-
+6. gradle-wrapper.properties contain the gradle wrapper configuration information
 
 ### Testing Gradle
 
