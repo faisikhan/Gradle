@@ -1,12 +1,5 @@
-[![CI](https://github.com/tkgregory/spring-boot-api-example/actions/workflows/gradle.yml/badge.svg)](https://github.com/tkgregory/spring-boot-api-example/actions/workflows/gradle.yml)
+Gradle is a build automation tool is used to automate the creation of applications.
 
-## Overview
-
-An example project to demonstrate:
-
-* how to create a Spring Boot REST API ([article](https://tomgregory.com/building-a-spring-boot-application-in-jenkins/) | [video](https://youtu.be/sCcuUMn1vdM))
-* how to run Spring Boot in Docker and publish to Docker Hub ([article](https://tomgregory.com/building-a-spring-boot-application-in-docker-and-jenkins/) | [video](https://youtu.be/Kc3Vw5vk1Lw))
-* how to deploy the Spring Boot application to AWS with CloudFormation ([article](https://tomgregory.com/deploying-a-spring-boot-application-into-aws-with-jenkins/) | [video](https://youtu.be/5xh0nAYeZNc))
 
 ## Pre-requisites
 
