@@ -12,12 +12,7 @@ pipeline {
 
       }
     } 
-        stage('Initialize') {
-            steps {
-                sh 'gradle init'
-            }
-        }       
-        stage('Build') {
+        stage('Assemble') {
             steps {
                 sh './gradlew assemble'
             }
