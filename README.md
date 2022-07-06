@@ -1,14 +1,11 @@
-Gradle is a build automation tool is used to automate the creation of applications.
+1. Gradle is a build automation tool is used to automate the creation of applications.
+2. Gradle is popular to provide high-speed performance, nearly twice as fast as Maven.
+3. A build script is known as build.gradle and is located in the root directory of the project. 
+4. Gradlew is a gradle wrapper for gradle command.
+5. gradlew is a wrapper(w - character) that uses gradle.
 
 
-## Pre-requisites
-
-* JDK 8+
-* Docker
-
-## Building
-
-### Testing
+### Testing Gradle
 
 `./gradlew test`
 
@@ -43,5 +40,3 @@ Gradle is a build automation tool is used to automate the creation of applicatio
 * create ride - POST JSON to [/ride](http://localhost:8080/ride) to create a new ride 
 (see [article](https://tomgregory.com/building-a-spring-boot-application-in-jenkins/#2_Trying_out_our_Spring_Boot_application) for full details)
 
-## Need further support?
-Contact me if you need help at tom@tomgregory.com.
