@@ -11,7 +11,12 @@ pipeline {
         git([url: 'git@github.com:faisikhan/gradle.git', credentialsId: 'githubcreds', branch: 'master'])
 
       }
-    }
+    } 
+        stage('Initialize') {
+            steps {
+                sh 'gradle init'
+            }
+        }       
         stage('Build') {
             steps {
                 sh './gradlew assemble'
